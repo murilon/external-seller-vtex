@@ -33,7 +33,8 @@ export const getItemsInfoFromInput = (input: SimulationInput) =>
           required: false,
           schema: {
             Name: {
-              maximumNumberOfCharacters: 10
+              maximumNumberOfCharacters: 10,
+              domain: []
             }
           }
         },
@@ -42,6 +43,7 @@ export const getItemsInfoFromInput = (input: SimulationInput) =>
           required: false,
           schema: {
             Name: {
+              maximumNumberOfCharacters: 10,
               domain: ['7 dias','15 dias','30 dias']
             }
           }
