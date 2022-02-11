@@ -26,17 +26,17 @@ export interface SimulationItem {
 interface AttachmentOffering {
   name: string
   required: boolean
-  schema: Schema
+  schema?: Schema
 }
 
 interface Schema {
-  Name: Name
-  Number: Name
+  Name?: Name
+  Number?: Name
 }
 
 interface Name {
-  maximumNumberOfCharacters: number
-  domain: any[]
+  maximumNumberOfCharacters?: number
+  domain?: any[]
 }
 
 interface Offering {

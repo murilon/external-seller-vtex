@@ -20,25 +20,29 @@ export const getItemsInfoFromInput = (input: SimulationInput) =>
       unitMultiplier: 1,
       offerings: [
         {
-          type: "Rótulo ",
-          id: "teste offerings",
-          name: "teste offerings",
-          price: 55555
+          type: "Label",
+          id: "Label 1",
+          name: "Rótulo Especial",
+          price: 1000
         }
-        
+
       ],
       attachmentOfferings: [
         {
-          name: "teste attachmentOfferings",
+          name: "Rótulo Personalizado",
           required: false,
           schema: {
             Name: {
-              maximumNumberOfCharacters: 10,
-              domain: ['10']
-            },
-            Number: {
-              maximumNumberOfCharacters: 11,
-              domain: ['11']
+              maximumNumberOfCharacters: 10
+            }
+          }
+        },
+        {
+          name: "Recorrência",
+          required: false,
+          schema: {
+            Name: {
+              domain: ['7 dias','15 dias','30 dias']
             }
           }
         }
