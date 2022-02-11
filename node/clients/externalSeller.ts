@@ -18,6 +18,14 @@ export class ExternalSeller extends ExternalClient {
     })
   }
 
+  /*
+  public fullfilmentSimulation2(){
+    const body = {
+
+    }
+
+  }*/
+
   public fullfilmentSimulation(input: SimulationInput) {
     const items = getItemsInfoFromInput(input)
 
@@ -52,8 +60,9 @@ export class ExternalSeller extends ExternalClient {
         },
       ],
       postalCode: input.postalCode,
-    }
 
+    }
+    console.log(body)
     return body
   }
 
@@ -61,7 +70,7 @@ export class ExternalSeller extends ExternalClient {
     const body: MarketplaceOrderResponse = {
       ...request,
       orderId: '123456',
-      followUpEmail: 'fabiana.fonseca@vtex.com.br',
+      followUpEmail: 'murilo.faria93@gmail.com',
     }
 
     return body
@@ -83,23 +92,31 @@ export class ExternalSeller extends ExternalClient {
       type: 'Output',
       invoiceNumber: 'NFe-00001',
       issuanceDate: '2020-11-21T00:00:00',
-      invoiceValue: 38500,
+      invoiceValue: 1999,
       invoiceUrl: 'https://7dfd0931fce9d4b74d20fd70d48eb714.m.pipedream.net',
       courier: '',
       trackingNumber: '',
       trackingUrl: '',
       items: [
         {
-          id: '345117',
+          id: '7',
           quantity: 1,
-          price: 9003,
+          price: 999,
         },
       ],
     }
 
     return invoiceData
   }
+// Fluxo para testes de CancelOrder() retornando null
+  public async cancelOrder() {
+    const body = {}
+    return body}
 
+    
+
+
+/*
   public async cancelOrder(orderId: string, marketplaceOrderId: string) {
     const body = {
       date: '2020-11-02 18:52:00',
@@ -110,6 +127,36 @@ export class ExternalSeller extends ExternalClient {
 
     return body
   }
+
+*/
+
+/*
+public async cancelOrder() {
+  const body = {
+
+    type: 'Output',
+    invoiceNumber: 'NFe-00001',
+    issuanceDate: '2020-11-21T00:00:00',
+    invoiceValue: 1999,
+    invoiceUrl: 'https://7dfd0931fce9d4b74d20fd70d48eb714.m.pipedream.net',
+    courier: '',
+    trackingNumber: '',
+    trackingUrl: '',
+    items: [
+      {
+        id: '7',
+        quantity: 1,
+        price: 999,
+      },
+    ],
+  }
+
+  console.log(body)
+
+  return body
+}*/
+
+
 }
 
 interface OrderDispatch {

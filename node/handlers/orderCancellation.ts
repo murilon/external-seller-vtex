@@ -1,21 +1,24 @@
 import { json } from 'co-body'
 
+
 export async function mkpOrderCancellation(ctx: Context) {
   const {
     clients: { externalSeller },
     vtex: {
       route: {
-        params: { orderId },
+        params: { /*orderId*/ },
       },
     },
   } = ctx
 
-  const { marketplaceOrderId } = await json(ctx.req)
+  const { /*marketplaceOrderId*/ } = await json(ctx.req)
+
+  
 
   try {
     ctx.body = await externalSeller.cancelOrder(
-      orderId as string,
-      marketplaceOrderId
+      //orderId as string,
+      //marketplaceOrderId
     )
     ctx.status = 200
   } catch (e) {
@@ -23,6 +26,11 @@ export async function mkpOrderCancellation(ctx: Context) {
     ctx.status = 500
   }
 }
+  
+
+
+
+
 
 export async function sellerOrderCancellation(ctx: Context) {
   const {

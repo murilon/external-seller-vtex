@@ -13,10 +13,37 @@ export const getItemsInfoFromInput = (input: SimulationInput) =>
       seller,
       measurementUnit: 'un',
       merchantName: null,
-      price: 37500,
+      price: 999,
       priceTags: [],
       priceValidUntil: null,
       requestIndex: 0,
       unitMultiplier: 1,
+      offerings: [
+        {
+          type: "Rótulo ",
+          id: "teste offerings",
+          name: "teste offerings",
+          price: 55555
+        }
+        
+      ],
+      attachmentOfferings: [
+        {
+          name: "teste attachmentOfferings",
+          required: false,
+          schema: {
+            Name: {
+              maximumNumberOfCharacters: 10,
+              domain: ['10']
+            },
+            Number: {
+              maximumNumberOfCharacters: 11,
+              domain: ['11']
+            }
+          }
+        }
+      ]
+
+
     }
   })
